@@ -15,6 +15,8 @@ def test_parser():
     assert si.parse_value_and_unit("0.022R") == (22e-3, "Ω")
     assert si.parse_value_and_unit("15mΩ") == (15e-3, "Ω")
     assert si.parse_value_and_unit("6e-3R") == (6e-3, "Ω")
+    assert si.parse_value_and_unit("5M1Ω") == (5.1e6, "Ω")
+    assert si.parse_value("4k7") == 4.7e3
 
 
 def test_formatter():

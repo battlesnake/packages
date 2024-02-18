@@ -8,14 +8,14 @@ venv:
 	fi
 
 test: venv
-	pip install .[test]
-	pytest
+	python -m pip install .[test]
+	python -m pytest
 
 build: venv test
 	rm -rf dist/ build/
-	pip install build
+	python -m pip install build
 	python -m build
 
 publish: venv build
-	pip install twine
+	python -m pip install twine
 	python -m twine upload --repository pypi dist/*
